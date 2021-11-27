@@ -93,11 +93,10 @@ layout(location = 0) out vec4 fragColor;
 
 uniform int clock;
 in vec3 mycolor;
-in float intensity;
 
 void main()
 {
-  fragColor = vec4(0.776, 0.619, 0.082, 1.0f)  * intensity;
+  fragColor = vec4(0.776, 0.619, 0.082, 1.0f);
   
 }
 """
