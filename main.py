@@ -27,6 +27,7 @@ void main()
   mycolor = ccolor;
 }
 """
+
 vertex_shader_2 = """
 #version 460
 
@@ -93,14 +94,16 @@ layout(location = 0) out vec4 fragColor;
 
 uniform int clock;
 in vec3 mycolor;
-in float intensity;
 
 void main()
 {
-  fragColor = vec4(0.776, 0.619, 0.082, 1.0f)  * intensity;
-  
+  fragColor = vec4(0.776, mycolor.y, 0.082, 1.0f)  ;
+
 }
 """
+
+
+
 
 fragment_shader_5 = """
 #version 460
@@ -117,6 +120,9 @@ void main()
   fragColor = texture(tex, vertexTexcoords) * intensity;
 }
 """
+#segundo shaders
+
+
 
 
 cvs_1 = compileShader(vertex_shader_1, GL_VERTEX_SHADER)
@@ -265,14 +271,14 @@ while running:
       elif event.key == pygame.K_5:
          shader = shader_5
       elif event.key == pygame.K_q:
-         x += 0.3
+         x += 0.2
       elif event.key == pygame.K_w:
-         x += -0.3 
+         x += -0.2 
       elif event.key == pygame.K_a:
-         y += 0.3
+         y += 0.2
       elif event.key == pygame.K_s:
-         y += -0.3
+         y += -0.2
       elif event.key == pygame.K_z:
-         z += 0.3
+         z += 0.2
       elif event.key == pygame.K_x:
-         z += -0.3
+         z += -0.2
