@@ -96,10 +96,11 @@ in vec3 mycolor;
 
 void main()
 {
-  fragColor = vec4(0.776, 0.619, 0.082, 1.0f);
-  
+  fragColor = vec4(0.776, mycolor.y, 0.082, 1.0f)  ;
+
 }
 """
+
 
 fragment_shader_5 = """
 #version 460
@@ -264,14 +265,14 @@ while running:
       elif event.key == pygame.K_5:
          shader = shader_5
       elif event.key == pygame.K_q:
-         x += 0.3
+         x += 0.2
       elif event.key == pygame.K_w:
-         x += -0.3 
+         x += -0.2 
       elif event.key == pygame.K_a:
-         y += 0.3
+         y += 0.2
       elif event.key == pygame.K_s:
-         y += -0.3
+         y += -0.2
       elif event.key == pygame.K_z:
-         z += 0.3
+         z += 0.2
       elif event.key == pygame.K_x:
-         z += -0.3
+         z += -0.2
