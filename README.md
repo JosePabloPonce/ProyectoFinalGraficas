@@ -8,3 +8,4 @@ Para Rotar en z positivo = "z"
 Para Rotar en x negativo = "w"
 Para Rotar en y negativo = "s"
 Para Rotar en z negativo = "x"
+
