@@ -57,7 +57,11 @@ in vec3 mycolor;
 
 void main()
 {
-  fragColor = vec4(mycolor.yzx, 1.0f);
+  if (mod(clock/10, 2) == 0) {
+    fragColor = vec4(mycolor.xyz, 1.0f);
+  } else {
+    fragColor = vec4(mycolor.zxy, 1.0f);
+  }
 }
 """
 fragment_shader_2 = """
@@ -69,25 +73,11 @@ in vec3 mycolor;
 
 void main()
 {
-  fragColor = vec4(mycolor.xyz, 1.0f);
+  fragColor = vec4(mycolor.yxz, 1.0f);
 }
 """
 
 fragment_shader_3 = """
-#version 460
-layout(location = 0) out vec4 fragColor;
-
-uniform int clock;
-in vec3 mycolor;
-
-void main()
-{
-  fragColor = vec4(mycolor.zxy, 1.0f);
-  
-}
-"""
-
-fragment_shader_4 = """
 #version 460
 layout(location = 0) out vec4 fragColor;
 
@@ -101,6 +91,19 @@ void main()
 }
 """
 
+fragment_shader_4 = """
+#version 460
+layout(location = 0) out vec4 fragColor;
+
+uniform int clock;
+in vec3 mycolor;
+
+void main()
+{
+  fragColor = vec4(0.247, mycolor.y, 0.121, 1.0f)  ;
+
+}
+"""
 
 fragment_shader_5 = """
 #version 460
